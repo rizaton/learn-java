@@ -2,7 +2,7 @@
 ![Java](https://img.shields.io/badge/Language-Java-orange)
 ![IDE](https://img.shields.io/badge/IDE-IntelliJ%20IDEA-blue)
 ![Learning Path](https://img.shields.io/badge/Stage-Generics-brightgreen)
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
 This repository is part of my **Java Learning**, focusing on **Java Generic Classes and Concepts**.  
 It follows after:
