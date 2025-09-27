@@ -45,7 +45,15 @@ public class TodoListView {
         }
     }
     public void removeTodoList(){
+        System.out.println("Remove Todo List");
 
+        var number = InputUtil.input("Number (x for cancel)");
+
+        if (number.equals("x")){
+            // cancel
+        } else {
+            todoListService.removeTodoList(Integer.valueOf(number));
+        }
     }
 
 }
