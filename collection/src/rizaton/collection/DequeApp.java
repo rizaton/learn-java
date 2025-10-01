@@ -34,6 +34,6 @@ public class DequeApp {
         System.out.println(queue.pollFirst());
         System.out.println(queue.pollFirst());
         System.out.println(queue.pollFirst());
-        
+
     }
 }
