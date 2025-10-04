@@ -9,11 +9,13 @@
 
   <name>apache_maven</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>21</maven.compiler.release>
+      <junit.version>5.11.0</junit.version>
+      <gson.version>2.13.2</gson.version>
   </properties>
 
   <dependencyManagement>
@@ -21,7 +23,7 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.11.0</version>
+        <version>${junit.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -41,15 +43,15 @@
       <scope>test</scope>
     </dependency>
       <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-      <dependency>
-          <groupId>com.google.code.gson</groupId>
-          <artifactId>gson</artifactId>
-          <version>2.13.2</version>
-      </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>${gson.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults "may be moved to parent pom" -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -99,7 +101,7 @@
 <!--            <id>id</id>-->
 <!--            <name>name</name>-->
 <!--            <url>url</url>-->
-<!--        </repository>-- >
+<!--        </repository>-->
     </repositories>
 
 </project>
