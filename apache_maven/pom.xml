@@ -6,6 +6,11 @@
   <groupId>rizaton</groupId>
   <artifactId>apache_maven</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>apache_maven-app</module>
+    <module>apache_maven-data</module>
+  </modules>
 
   <name>apache_maven</name>
   <!-- FIXME change it to the project's website -->
