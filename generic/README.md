@@ -8,9 +8,9 @@
 This repository is part of my **Java Learning**, focusing on **Java Generic Classes and Concepts**.  
 It follows after:
 
-- [learn-java-basic](https://github.com/rizaton/learn-java-basic) – Basic Java syntax and fundamentals
-- [learn-java-oop](https://github.com/rizaton/learn-java-oop) – Object-Oriented Programming in Java
-- [learn-java-standard_class](https://github.com/rizaton/learn-java-standard_class) – Standard Java Classes
+- [learn-java-basic](https://github.com/rizaton/learn-java/tree/main/basic) – Basic Java syntax and fundamentals
+- [learn-java-oop](https://github.com/rizaton/learn-java/tree/main/oop) – Object-Oriented Programming in Java
+- [learn-java-standard_class](https://github.com/rizaton/learn-java/tree/main/standard_class) – Standard Java Classes
 
 A simple repository for learning and practicing **Java Generics (Generic Class and related concepts)**.  
 This project is built and managed with **IntelliJ IDEA**.
