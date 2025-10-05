@@ -1,5 +1,6 @@
 package rizaton.test;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
@@ -34,4 +35,11 @@ public class CalculatorTest {
                 () -> calculator.divide(100, 0)
         );
     }
+
+    @Test
+    @Disabled
+    public void testComingSoon() {
+        //
+    }
+
 }
