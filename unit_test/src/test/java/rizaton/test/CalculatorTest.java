@@ -5,6 +5,7 @@ import org.opentest4j.TestAbortedException;
 import rizaton.test.generator.SimpleDisplayNameGenerator;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 //@DisplayName("Test for Calculator")
 @DisplayNameGeneration(SimpleDisplayNameGenerator.class)
@@ -66,6 +67,13 @@ public class CalculatorTest {
             throw new TestAbortedException("Test Aborted because Profile isn't DEV");
         }
         // unit test for dev
+    }
+
+    @Test
+    public void testAssumptions(){
+        assumeTrue("DEV".equals(System.getenv("PROFILE")));
+
+        // Unit test for DEV
     }
 
 }
