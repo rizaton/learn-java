@@ -1,6 +1,7 @@
 package rizaton.test;
 
 import org.junit.jupiter.api.*;
+import org.opentest4j.TestAbortedException;
 import rizaton.test.generator.SimpleDisplayNameGenerator;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -56,6 +57,15 @@ public class CalculatorTest {
     @Disabled
     public void testComingSoon() {
         //
+    }
+
+    @Test
+    public void testAborted(){
+        var profile = System.getenv("PROFILE");
+        if (!"DEV".equals(profile)) {
+            throw new TestAbortedException("Test Aborted because Profile isn't DEV");
+        }
+        // unit test for dev
     }
 
 }
