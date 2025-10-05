@@ -1,9 +1,6 @@
 package rizaton.test;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGeneration;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import rizaton.test.generator.SimpleDisplayNameGenerator;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,6 +10,25 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CalculatorTest {
 
     private final Calculator calculator = new Calculator();
+
+    @BeforeEach
+    public void setUp(){
+        System.out.println("Before Each");
+    }
+
+    @AfterEach
+    public void tearDown(){
+        System.out.println("After Each");
+    }
+
+    @BeforeAll
+    public static void beforeAll(){
+        System.out.println("Before All");
+    }
+    @AfterAll
+    public static void afterAll(){
+        System.out.println("After All");
+    }
 
     @Test
 //    @DisplayName("Scenario success test for add method add(Integer, Integer)")
