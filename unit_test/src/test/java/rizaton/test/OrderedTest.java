@@ -15,7 +15,7 @@ public class OrderedTest {
 
     @AfterAll
     public void afterAll(){
-        
+
     }
 
     @Test
