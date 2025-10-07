@@ -11,7 +11,7 @@ import java.util.Random;
 @Extensions(value = {
         @ExtendWith(RandomParameterResolver.class)
 })
-public class RandomCalculatorTest {
+public class RandomCalculatorTest extends ParentCalculatorTest{
 
     private final Calculator calculator = new Calculator();
 
