@@ -3,16 +3,14 @@ package rizaton.test;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extensions;
-import rizaton.test.generator.RandomParameterResolver;
+import rizaton.test.resolver.RandomParameterResolver;
 
 import java.util.Random;
 
-@Extensions(value = {
+@Extensions({
         @ExtendWith(RandomParameterResolver.class)
 })
-public class RandomCalculatorTest extends ParentCalculatorTest{
-
-    private final Calculator calculator = new Calculator();
+public class RandomCalculatorTest extends AbstractCalculatorTest {
 
     @DisplayName("Test Calculator Random")
     @RepeatedTest(

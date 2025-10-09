@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.List;
 
-public class ParameterTest extends ParentCalculatorTest{
+public class ParameterTest extends AbstractCalculatorTest {
 
     @DisplayName("Test Calculator with Parameter")
     @ParameterizedTest(name = "{displayName} with data {0}")

@@ -1,4 +1,4 @@
-package rizaton.test.generator;
+package rizaton.test.resolver;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
