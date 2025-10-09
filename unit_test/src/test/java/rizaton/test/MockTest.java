@@ -6,6 +6,8 @@ import org.mockito.Mockito;
 import java.util.List;
 
 public class MockTest {
+    // IntelliJ IDEA Running args
+    // -ea -javaagent:$MAVEN_REPOSITORY$/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar
 
     @Test
     public void testMock(){
