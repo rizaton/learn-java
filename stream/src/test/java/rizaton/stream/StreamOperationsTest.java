@@ -15,7 +15,7 @@ public class StreamOperationsTest {
 
         Stream<String> streamNames = names.stream();
         Stream<String> streamUpper =  streamNames.map(String::toUpperCase);
-        
+
         streamUpper.forEach(System.out::println);
         names.forEach(System.out::println);
     }
