@@ -3,12 +3,9 @@ package rizaton.database;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
 public class ConnectionUtil {
 
-    private static HikariDataSource dataSource;
+    private static final HikariDataSource dataSource;
 
     static {
         HikariConfig config = new HikariConfig();
