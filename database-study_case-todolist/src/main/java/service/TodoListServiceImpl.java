@@ -1,6 +1,6 @@
 package service;
 
-import entity.TodoList;
+import entity.Todolist;
 import repository.TodoListRepository;
 
 public class TodoListServiceImpl implements TodoListService {
@@ -13,7 +13,7 @@ public class TodoListServiceImpl implements TodoListService {
 
     @Override
     public void showTodoList() {
-        TodoList[] model = todoListRepository.getAll();
+        Todolist[] model = todoListRepository.getAll();
 
         System.out.println("Todo List: ");
         for (var i = 0; i < model.length; i++) {
@@ -28,7 +28,7 @@ public class TodoListServiceImpl implements TodoListService {
 
     @Override
     public void addTodoList(String todo) {
-        TodoList todoList = new TodoList(todo);
+        Todolist todoList = new Todolist(todo);
         todoListRepository.add(todoList);
         System.out.println("Success adding Todo : " + todo);
     }

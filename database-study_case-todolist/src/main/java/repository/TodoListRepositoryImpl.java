@@ -1,7 +1,7 @@
 package repository;
 
 import com.zaxxer.hikari.HikariDataSource;
-import entity.TodoList;
+import entity.Todolist;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class TodoListRepositoryImpl implements TodoListRepository{
 
-    public TodoList[] data = new TodoList[10];
+    public Todolist[] data = new Todolist[10];
 
     private HikariDataSource dataSource;
 
@@ -18,7 +18,7 @@ public class TodoListRepositoryImpl implements TodoListRepository{
     }
 
     @Override
-    public TodoList[] getAll() {
+    public Todolist[] getAll() {
         return data;
     }
 
@@ -38,7 +38,7 @@ public class TodoListRepositoryImpl implements TodoListRepository{
         // If full, model get resized two times
         if (isFull()){
             var temp = data;
-            data = new TodoList[data.length * 2];
+            data = new Todolist[data.length * 2];
 
             for (int i = 0; i < temp.length; i++) {
                 data[i] = temp[i];
@@ -47,7 +47,7 @@ public class TodoListRepositoryImpl implements TodoListRepository{
     }
 
     @Override
-    public void add(TodoList todoList) {
+    public void add(Todolist todoList) {
         String sql = "INSERT INTO todolist(todo) VALUES (?)";
 
         try (Connection connection = dataSource.getConnection();

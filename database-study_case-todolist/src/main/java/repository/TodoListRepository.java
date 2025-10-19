@@ -1,12 +1,12 @@
 package repository;
 
-import entity.TodoList;
+import entity.Todolist;
 
 public interface TodoListRepository {
 
-    TodoList[] getAll();
+    Todolist[] getAll();
 
-    void add(TodoList todoList);
+    void add(Todolist todoList);
 
     boolean remove(Integer number);
 
