@@ -37,8 +37,6 @@ public class TodoListRepositoryImpl implements TodoListRepository{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        return data;
     }
 
     @Override
