@@ -3,16 +3,13 @@ package repository;
 import com.zaxxer.hikari.HikariDataSource;
 import entity.Todolist;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TodoListRepositoryImpl implements TodoListRepository{
 
-    public Todolist[] data = new Todolist[10];
-
-    private HikariDataSource dataSource;
+    private final HikariDataSource dataSource;
 
     public TodoListRepositoryImpl(HikariDataSource dataSource) {
         this.dataSource = dataSource;
@@ -20,31 +17,28 @@ public class TodoListRepositoryImpl implements TodoListRepository{
 
     @Override
     public Todolist[] getAll() {
+        String sql = "SELECT id, todo FROM todolist";
+
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(sql)) {
+
+            List<Todolist> list = new ArrayList<>();
+            while(resultSet.next()){
+                Todolist todolist = new Todolist();
+                todolist.setId(resultSet.getInt("id"));
+                todolist.setTodo(resultSet.getString("todo"));
+
+                list.add(todolist);
+            }
+
+            return list.toArray(new Todolist[]{});
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
         return data;
-    }
-
-    public boolean isFull(){
-        var isFull = true;
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == null) {
-                // there's still empty in model
-                isFull = false;
-                break;
-            }
-        }
-        return isFull;
-    }
-
-    public void resizeIfFull(){
-        // If full, model get resized two times
-        if (isFull()){
-            var temp = data;
-            data = new Todolist[data.length * 2];
-
-            for (int i = 0; i < temp.length; i++) {
-                data[i] = temp[i];
-            }
-        }
     }
 
     @Override
