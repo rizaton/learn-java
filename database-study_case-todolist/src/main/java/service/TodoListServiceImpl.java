@@ -5,7 +5,7 @@ import repository.TodoListRepository;
 
 public class TodoListServiceImpl implements TodoListService {
 
-    private TodoListRepository todoListRepository;
+    private final TodoListRepository todoListRepository;
 
     public TodoListServiceImpl(TodoListRepository todoListRepository) {
         this.todoListRepository = todoListRepository;
@@ -16,13 +16,8 @@ public class TodoListServiceImpl implements TodoListService {
         Todolist[] model = todoListRepository.getAll();
 
         System.out.println("Todo List: ");
-        for (var i = 0; i < model.length; i++) {
-            var todoList = model[i];
-            var listNumber = i + 1;
-
-            if (todoList != null){
-                System.out.println(listNumber + ". " + todoList.getTodo());
-            }
+        for (var todolist : model) {
+            System.out.println(todolist.getId() + "." + todolist.getTodo());
         }
     }
 
