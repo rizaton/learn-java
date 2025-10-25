@@ -10,6 +10,7 @@ public class LocaleTest {
         var language = "en";
         var country = "US";
 
+        @SuppressWarnings("deprecation")
         var locale = new Locale(language, country);
 
         System.out.println(locale.getCountry());
