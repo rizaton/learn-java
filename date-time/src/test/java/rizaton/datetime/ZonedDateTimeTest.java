@@ -38,7 +38,7 @@ public class ZonedDateTimeTest {
 
         ZonedDateTime zonedDateTime2 = zonedDateTime1.withZoneSameLocal(ZoneId.of("GMT"));
         ZonedDateTime zonedDateTime3 = zonedDateTime1.withZoneSameInstant(ZoneId.of("GMT"));
-        
+
         System.out.println(zonedDateTime2);
         System.out.println(zonedDateTime3);
     }
